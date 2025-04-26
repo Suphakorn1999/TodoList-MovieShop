@@ -29,15 +29,13 @@ export default function MovieShop() {
   function updatetotalPrice() {
     const totalItems = items.length;
     const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
-    console.log("totalItems", totalItems);
+
     let discount = 0;
     if (totalItems > 5 || totalQuantity > 5) {
       discount = 0.2;
     } else if (totalItems > 3 || totalQuantity > 3) {
       discount = 0.1;
     }
-
-    console.log("discount", discount);
 
     const subTotal = items.reduce(
       (sum, item) => sum + item.price * item.quantity,
